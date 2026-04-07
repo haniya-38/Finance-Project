@@ -14,7 +14,7 @@ This project investigates the relationship between **Economic Stress** (inflatio
 
 ## 🧠 The "Economic Stress" Hypothesis
 
-> *"When the PKR devalues (Dollar Rate search spikes), search interest for discretionary goods (New Cars, Property) falls, and cyclical stocks crash, while defensive stocks (Nestle, Abbott) maintain steady performance as essential goods are still required."*
+> *"When the PKR devalues (Dollar Rate search spikes), search interest for discretionary goods (New Cars, Property) falls, and cyclical stocks crash, while python -m pip install --upgrade pip setuptools wheeldefensive stocks (Nestle, Abbott) maintain steady performance as essential goods are still required."*
 
 ---
 
