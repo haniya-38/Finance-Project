@@ -1,0 +1,24 @@
+venv\Scripts\activate
+
+OBJECTIVE: 
+
+Using 14 years of Pakistan Stock Exchange data (2010–2024) and Google Trends search 
+behavior, this project analyzes how economic stress — measured by inflation-related 
+searches (Dollar Rate, Petrol Price) — correlates with stock performance across two 
+groups: defensive companies (Nestle, Abbott) that should hold up, and cyclical companies
+ (Lucky Cement, HBL) that should fall. All findings are visualized through normalized 
+ charts and correlation analysis, with a forward-looking trend estimate.
+ "When Dollar Rate searches spike (inflation panic), 
+ do defensive stocks hold up while cyclical stocks fall?"
+
+defensive approach; nestle, abbot, national foods-------remains stable in downturn
+cyclic approach;  lucky cement, HBL, gul ahmed--------- decline with downturn
+
+inflation proxies; PSO,OGDC
+
+all_data--- dictionary containing all numeric data of above companies
+
+pk_cleaned_merged.csv----- contains all the numeric and historic data arranged and merged
+ in one table according to montly dates
+
+

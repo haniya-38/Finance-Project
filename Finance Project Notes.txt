@@ -1,0 +1,24 @@
+Ive got a Project - related to financial models
+
+It'll  involve me getting a dataset related to a 'financial based' topic
+
+making data analysis and data cleaning from my part
+
+I'd need ideas over the topic, the process of getting the data set, how will i visualize/analyze the data, the process/whereabouts 
+
+I need something fun n untuitive to do (given the time period of 1 month)
+
+will be working using python
+
+for the 'lipstick effect' tracker, i want a proper description of the financial topic, methods for  getting a dataset, making data analysis and data cleaning from my part, will be working on python
+
+
+
+
+Gemini deep research:
+(1) Search for engaging and unique financial data science project ideas suitable for a one-month timeline using Python. Focus on topics that blend finance with pop culture or unusual indicators, such as Crypto Sentiment Analysis (Reddit/Twitter vs Price), The Lipstick Effect (Recession indicators), or Meme Stock volatility analysis.
+(2) Identify specific data sources and Python APIs for acquiring necessary data, including libraries like `yfinance` for stocks, CoinGecko API for crypto, PRAW for Reddit sentiment, and Kaggle for static financial datasets (e.g., loan default prediction, credit card fraud).
+(3) Research the specific data cleaning and preprocessing steps required for financial time-series data, such as handling missing trading days, adjusting for stock splits, normalizing data ranges, and aligning sentiment timestamps with market data.
+(4) Investigate suitable financial modeling and analysis techniques for the proposed topics, such as Monte Carlo simulations for portfolio risk, LSTM or ARIMA for time-series forecasting, and VADER/BERT for sentiment scoring.
+(5) Explore Python visualization libraries best suited for financial storytelling, such as Plotly and Streamlit for interactive dashboards, Seaborn for correlation heatmaps, and Matplotlib for candlestick charts.
+(6) Synthesize a structured 4-week project roadmap (Weekly Sprints) covering: Week 1: Data Acquisition & Cleaning; Week 2: Exploratory Data Analysis (EDA); Week 3: Model Building/Backtesting; Week 4: Visualization & Final Presentation.
