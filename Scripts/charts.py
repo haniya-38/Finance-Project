@@ -6,8 +6,8 @@ _LY = dict(  # shared Plotly layout (single-axis charts)
     font=dict(family="Inter,sans-serif", color="#c9d4e8"),
     xaxis=dict(gridcolor="rgba(255,255,255,0.05)"),
     yaxis=dict(gridcolor="rgba(255,255,255,0.05)", title="Normalized (0–100)"),
-    legend=dict(orientation="h", x=0, y=1.12, bgcolor="rgba(0,0,0,0)", font=dict(size=11)),
-    margin=dict(l=50, r=20, t=55, b=45), hovermode="x unified",
+    legend=dict(orientation="h", x=0, xanchor="left", y=1.05, yanchor="bottom", bgcolor="rgba(0,0,0,0)", font=dict(size=11)),
+    margin=dict(l=50, r=20, t=40, b=45), hovermode="x unified",
 )
 
 def chart_A(dn, s):
@@ -21,7 +21,7 @@ def chart_A(dn, s):
                              fill="tozeroy", fillcolor=C["def_fill"]))
     fig.add_trace(go.Scatter(x=s.index, y=s["Inflation"], name="Inflation",
                              line=dict(color=C["inf_line"], width=2.5)))
-    fig.update_layout(**_LY, title="<b>Chart A — Inflation vs. Defensive Goods (Essentials)</b>")
+    fig.update_layout(**_LY)
     return fig
 
 def chart_B(dn, s):
@@ -35,7 +35,7 @@ def chart_B(dn, s):
                              fill="tozeroy", fillcolor=C["cyc_fill"]))
     fig.add_trace(go.Scatter(x=s.index, y=s["Inflation"], name="Inflation",
                              line=dict(color=C["inf_line"], width=2.5)))
-    fig.update_layout(**_LY, title="<b>Chart B — Inflation vs. Cyclical Goods (Non-Essentials)</b>")
+    fig.update_layout(**_LY)
     return fig
 
 def chart_C(fc):
@@ -50,7 +50,7 @@ def chart_C(fc):
     fig.add_vrect(x0=str(fc["dates"][-1]), x1=str(fc["fdates"][-1]),
                   fillcolor="rgba(239,68,68,0.07)", layer="below", line_width=0)
     ly = {**_LY, "yaxis": dict(gridcolor="rgba(255,255,255,0.05)", title="Inflation Rate (%)")}
-    fig.update_layout(**ly, title="<b>Chart C — Pakistan Inflation: 24-Month OLS Forecast</b>")
+    fig.update_layout(**ly)
     return fig
 
 def chart_D(s):
@@ -61,6 +61,5 @@ def chart_D(s):
                              fill="tozeroy", fillcolor=C["ratio_fill"]))
     fig.add_trace(go.Scatter(x=s.index, y=s["Inflation"], name="Inflation Rate",
                              line=dict(color=C["inf_line"], width=2.5)))
-    fig.update_layout(**_LY,
-                      title="<b>Chart D — Defensive/Cyclical Ratio vs. Inflation (Lipstick Effect)</b>")
+    fig.update_layout(**_LY)
     return fig
