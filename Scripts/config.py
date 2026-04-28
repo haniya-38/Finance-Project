@@ -1,7 +1,6 @@
 # Constants and configuration values for the dashboard
 
 STOCKS_FILE    = "data/stocks_raw.csv"
-TRENDS_FILE    = "data/trends_raw.csv"
 INFLATION_FILE = "data/pakistan_inflation_actual.csv"
 
 TICKERS = {
