@@ -2,7 +2,7 @@ import os
 import numpy as np
 import pandas as pd
 import streamlit as st
-from config import STOCKS_FILE, TRENDS_FILE, INFLATION_FILE, TICKERS, DEFENSIVE, CYCLICAL, INFLATION_COL
+from config import STOCKS_FILE, INFLATION_FILE, TICKERS, DEFENSIVE, CYCLICAL, INFLATION_COL
 
 @st.cache_data(show_spinner=False)
 def download_stocks():
@@ -19,18 +19,6 @@ def download_stocks():
     return raw
 
 @st.cache_data(show_spinner=False)
-def download_trends():
-    """Fetch Google Trends for Pakistan and cache to CSV."""
-    from pytrends.request import TrendReq
-    os.makedirs("data", exist_ok=True)
-    pt = TrendReq(hl="en-US", tz=300)
-    kw = ["Dollar Rate", "Petrol Price", "Inflation Pakistan", "New Car", "Property Pakistan"]
-    pt.build_payload(kw, timeframe="2010-01-01 2024-12-31", geo="PK")
-    t = pt.interest_over_time().drop(columns=["isPartial"], errors="ignore")
-    t.to_csv(TRENDS_FILE)
-    return t
-
-@st.cache_data(show_spinner=False)
 def load_data():
     """
     Load (or download) all data → merge monthly → normalize 0–100.
@@ -39,17 +27,14 @@ def load_data():
     """
     stocks_raw = (pd.read_csv(STOCKS_FILE, index_col=0, parse_dates=True)
                   if os.path.exists(STOCKS_FILE) else download_stocks())
-    trends_raw = (pd.read_csv(TRENDS_FILE, index_col=0, parse_dates=True)
-                  if os.path.exists(TRENDS_FILE) else download_trends())
-
     if not os.path.exists(INFLATION_FILE):
         st.error(f"Missing: `{INFLATION_FILE}`. Please place the official CPI CSV in data/.")
         st.stop()
     inflation = pd.read_csv(INFLATION_FILE, index_col=0, parse_dates=True)
 
     data = (stocks_raw.resample("MS").mean()
-            .join([trends_raw.resample("MS").mean(), inflation], how="inner")
-            .ffill().dropna())
+        .join(inflation, how="inner")
+        .ffill().dropna())
     data_norm = (data - data.min()) / (data.max() - data.min()) * 100
     return data, data_norm
 
