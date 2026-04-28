@@ -59,7 +59,6 @@ during economic downturns, while cutting back on larger discretionary purchases.
         b.markdown(f"""
 **Project Pipeline:**
 - **Stocks:** Yahoo Finance API — PSX tickers (2010–2024)
-- **Trends:** Google Search Trends — Pakistan
 - **Inflation:** Official Pakistan CPI statistics (CSV)
 - **Observations:** {k['months']} monthly data points
 - **Normalization:** Min-Max (0–100 scale)
